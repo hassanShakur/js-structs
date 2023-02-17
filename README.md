@@ -33,3 +33,9 @@ For object `methods`, ([Object.method]), `.keys`, `.values`, `.entries` have a `
 In arrays, `access` is `O(1)`, `search` `O(n)`. `Insertion` and `deletion` depends on the location to do the operation. Adding & removing to the end is `O(1)`, and to the beginning is `O(n)` due to re-indexing of the rest of elements. Therefore `push` & `pop` are faster than `shift` & `unshift`.
 
 `Concat`, `slice` & `splice` use `O(n)`, and `sort` uses `O(nlogn)`. All array methods use `O(n)`.
+
+## Common Problem Solving Patterns
+
+### 1. Frequency Counter
+
+Makes use of `objects` or `set` to collect values or frequencies of values in 2 items or arrays to be compared eg anagrams. Helps avoid `O(n^2)` when dealing with arrays and strings by offering `O(n)`.
