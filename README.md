@@ -38,4 +38,8 @@ In arrays, `access` is `O(1)`, `search` `O(n)`. `Insertion` and `deletion` depen
 
 ### 1. Frequency Counter
 
-Makes use of `objects` or `set` to collect values or frequencies of values in 2 items or arrays to be compared eg anagrams. Helps avoid `O(n^2)` when dealing with arrays and strings by offering `O(n)`.
+Makes use of `objects` or `set` to collect values or frequencies of occurance of values in 2 items or arrays to be compared eg anagrams. Helps avoid `O(n^2)` when dealing with arrays and strings by offering `O(n)`.
+
+### 2. Multiple Pointers
+
+2 or more pointers from either sides of say an array to find a patters. Eg given a sorted array with negatives and positives and the 2 that sums up to 0 is needed. Therefore if sum of pointers is -ve, add 1 to the leftmost. Add 1 to the rightmost otherwise & if 0 return true.

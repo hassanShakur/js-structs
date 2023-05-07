@@ -1,0 +1,12 @@
+Probem Solving
+1. Understand it by:
+    i) Restate in your own words
+    ii) Inputs & outputs
+    iii) Other important pieces part of the data
+2. Explore similar problems
+    i) Simple to more complex ones
+    ii) Empty inputs & Invalid inputs & Edge cases
+3. Break it down - Steps
+
+charCodeAt - ASCII num for an alphanumeric
+
