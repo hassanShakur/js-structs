@@ -57,3 +57,15 @@ Let the window slide. Instead of redoing similar calculations, find out what is 
 #### 4. Divide & Conquer
 
 We'll see about this :)
+
+## Searching Algorithms
+
+1. Linear Search
+   Similar to the ones used in `indexOf()`, `includes()` and the likes. Takes in sorted or unsorted array and loops item to item to find the target.
+   [Sample](./04-Search-Algos/linearSearch.js)
+
+2. Binary Search
+   Takes a `sorted` array & divides & conquers by picking a pivot - mostly the middle - and determining where the target falls in the 2 arrays. Recursion takes over.
+   [Sample](./04-Search-Algos/binarySearch.js)
+
+3. 
