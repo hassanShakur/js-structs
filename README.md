@@ -68,4 +68,8 @@ We'll see about this :)
    Takes a `sorted` array & divides & conquers by picking a pivot - mostly the middle - and determining where the target falls in the 2 arrays. Recursion takes over.
    [Sample](./04-Search-Algos/binarySearch.js)
 
-3. 
+
+## Sorting Algorithms
+
+Starting with the inbuilt `sort()`, Passing any array - of numbers or strings - will return the sorted array based on the unicodes. To sort numbers, pass a callback as a parameter. If the callback returns `positive`, the sorting will be in `ascending`. For strings, you can order by length by comparing the lengths and returning as you need.
+Check out an [Example]()
