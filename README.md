@@ -68,8 +68,12 @@ We'll see about this :)
    Takes a `sorted` array & divides & conquers by picking a pivot - mostly the middle - and determining where the target falls in the 2 arrays. Recursion takes over.
    [Sample](./04-Search-Algos/binarySearch.js)
 
-
 ## Sorting Algorithms
 
 Starting with the inbuilt `sort()`, Passing any array - of numbers or strings - will return the sorted array based on the unicodes. To sort numbers, pass a callback as a parameter. If the callback returns `positive`, the sorting will be in `ascending`. For strings, you can order by length by comparing the lengths and returning as you need.
-Check out an [Example]()
+Check out an [Example](./05-Sorting-Algos/Basics/inbuiltSort.js)
+
+### Bubble Sort
+
+Works by swapping adjacent digits if the left is greater than the right. In the first round, the largest digit is taken to the end. The algorithm repeats this until the entire array is sorted or no swaps are made if that is being checked.
+Check out an [Example](./05-Sorting-Algos/Basics/bubbleSort.js)
