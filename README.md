@@ -83,3 +83,9 @@ Check out an [Example](./05-Sorting-Algos/Basics/bubbleSort.js)
 A variable keeps track of the index of the minimum value in the array. This min starts off as the first array element and whenever a new minimum is found while parsing the array, the index of the minimum var is updated. On reaching the end of the array, the `minimum` one is `swapped` with the `first element` in the array.
 Then the cycle continues this time starting at the second array element. This might only be superior to `bubble sort` when the number of swaps is of importance and should be minimized.
 Check out an [Example](./05-Sorting-Algos/Basics/selectionSort.js)
+
+### Insertion Sort
+
+Divides the array into 2 parts - the sorted and the unsorted - then loops over the unsorted section and picks each element placing it in its correct position in the sorted part of the array. It therefore starts by taking the `second` element and compares it with the one before and insert where necessary then moves on to the next element. This is repeated until the array is sorted.
+This algorithm is best in cases of `online algorithms` where there are new incoming values that were unknown of when the sorting began. They can just be `inserted` where needed.
+Check out an [Example](./05-Sorting-Algos/Basics/insertionSort.js)

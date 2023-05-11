@@ -1,5 +1,5 @@
 // BigO = O(n^2) ==> 2 for loops for each n
-// ? Best = O(n) ==> Using te swapped var & array is nearly or already sorted
+// ? Best = O(n) ==> Using the swapped var & array is nearly or already sorted
 // ! Worst = O(n^2) ==> Comparison in 2 nested loops for each item
 
 const bubbleSort = (arr) => {
