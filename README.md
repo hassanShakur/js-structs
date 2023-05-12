@@ -73,19 +73,35 @@ We'll see about this :)
 Starting with the inbuilt `sort()`, Passing any array - of numbers or strings - will return the sorted array based on the unicodes. To sort numbers, pass a callback as a parameter. If the callback returns `positive`, the sorting will be in `ascending`. For strings, you can order by length by comparing the lengths and returning as you need.
 Check out an [Example](./05-Sorting-Algos/Basics/inbuiltSort.js)
 
-### Bubble Sort
+### 1. Elementary / Quadratic Sorting Algorithms
+
+Are the basics with worst and average time complexities of `O(n^2)`. `Insertion` & `Bubble` sorting has a best case of `O(n)` while `Selection` is at `O(n^2)`. They all take constant space.
+
+#### Bubble Sort
 
 Works by swapping adjacent digits if the left is greater than the right. In the first round, the largest digit is taken to the end. The algorithm repeats this until the entire array is sorted or no swaps are made if that is being checked.
 Check out an [Example](./05-Sorting-Algos/Basics/bubbleSort.js)
 
-### Selection Sort
+#### Selection Sort
 
 A variable keeps track of the index of the minimum value in the array. This min starts off as the first array element and whenever a new minimum is found while parsing the array, the index of the minimum var is updated. On reaching the end of the array, the `minimum` one is `swapped` with the `first element` in the array.
 Then the cycle continues this time starting at the second array element. This might only be superior to `bubble sort` when the number of swaps is of importance and should be minimized.
 Check out an [Example](./05-Sorting-Algos/Basics/selectionSort.js)
 
-### Insertion Sort
+#### Insertion Sort
 
 Divides the array into 2 parts - the sorted and the unsorted - then loops over the unsorted section and picks each element placing it in its correct position in the sorted part of the array. It therefore starts by taking the `second` element and compares it with the one before and insert where necessary then moves on to the next element. This is repeated until the array is sorted.
 This algorithm is best in cases of `online algorithms` where there are new incoming values that were unknown of when the sorting began. They can just be `inserted` where needed.
 Check out an [Example](./05-Sorting-Algos/Basics/insertionSort.js)
+
+### 2. Intermediate Sorting Algorithms
+
+Elementaries are not so good with large data sets and therefore these can improve the Big O from `O(n^2)` to `O(n log n)`.
+
+#### Merge Sort
+
+The concept is that an array of 0 or 1 element is already sorted. This therefore decomposes an array to smaller arrays of length 0 or 1 the `merge` them to form a new sorted array.
+Recursion is of most importance in this. The code flow has the `recursive` part and the `merging function`. An array is split into `left` and `right` at the middle recursively into arrays of 1s and 0s then merged recursively again.
+Check out an [Example](./05-Sorting-Algos/Intermediate/mergeSort.js)
+Its Big O is `O(n log n)`. `log n` is from decomposition, i.e, decomposing an array of `8` elements to will take 3 steps, `16` will take 4 steps and so on. Therefore `2 ^ 4 = 16` (log base 2 of 16 is 4). Simple 😅. As for the `n`, in the merging function, comparison is approximately once for every item in both of the arrays being merged.
+Space complexity is at `O(n)` - space to store the small arrays increases as the length of the array increases.
