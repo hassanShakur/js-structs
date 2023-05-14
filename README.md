@@ -1,4 +1,26 @@
-# Data Structs JavaScript
+# JavaScript Data Structures
+
+- [JavaScript Data Structures](#javascript-data-structures)
+  - [Big O Notaion](#big-o-notaion)
+    - [Time Complexity](#time-complexity)
+      - [Big O Rules](#big-o-rules)
+    - [Space Complexity](#space-complexity)
+    - [Performance of Arrays \& Objects](#performance-of-arrays--objects)
+  - [Common Problem Solving Patterns](#common-problem-solving-patterns)
+    - [1. Frequency Counter](#1-frequency-counter)
+    - [2. Multiple Pointers](#2-multiple-pointers)
+    - [3. Sliding Window](#3-sliding-window)
+      - [4. Divide \& Conquer](#4-divide--conquer)
+  - [Searching Algorithms](#searching-algorithms)
+  - [Sorting Algorithms](#sorting-algorithms)
+    - [1. Elementary / Quadratic Sorting Algorithms](#1-elementary--quadratic-sorting-algorithms)
+      - [Bubble Sort](#bubble-sort)
+      - [Selection Sort](#selection-sort)
+      - [Insertion Sort](#insertion-sort)
+    - [2. Intermediate Sorting Algorithms](#2-intermediate-sorting-algorithms)
+      - [Merge Sort](#merge-sort)
+      - [Quick Sort](#quick-sort)
+      - [Radix Sort](#radix-sort)
 
 ## Big O Notaion
 
@@ -122,3 +144,12 @@ Another pivot is choses but this time to the left of the last pivot so the left 
 Check out an [Example](./05-Sorting-Algos/Intermediate/quickSort.js)
 
 The Big O is `O(n log n)` but can got to worst case of `O(n^2)` when the pivot is the minimum or maximum value each time. This can be avoided by not picking the first or last element as pivot and try to pick the middle or just a random one. Space complexity is `O(log n)`.
+
+#### Radix Sort
+
+Unlike all previous algorithms that sort based on comparisons on the numbers in the list, `radix` makes the sorting based on a concept of numbers that those with most digits are bigger than the few digit numbers. Also keeps the number order in place like 8 is of cause larger than 3. All numbers in the array are grouped together based on the `LSB` or Least significant digit at the 1s place value. They are then sorted based on how each of these digits follow each other.
+The cycle is repeated on the 10th place value until the highest place value a value in the array has where it stops. At this point the array will be sorted.
+
+Check out an [Example](./05-Sorting-Algos/Intermediate/radixSort.js)
+
+The Big O is approximately `O(nk)` where `n` is the array length and `k` is the average number of digits in all the numbers in the array. Though a different concept relating to how computers store numbers pushes the Big O to around `O(n log n)`, but more about than later :).
