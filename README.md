@@ -21,6 +21,9 @@
       - [Merge Sort](#merge-sort)
       - [Quick Sort](#quick-sort)
       - [Radix Sort](#radix-sort)
+  - [Data Structures](#data-structures)
+    - [Linked Lists](#linked-lists)
+      - [Singly Linked List](#singly-linked-list)
 
 ## Big O Notaion
 
@@ -153,3 +156,17 @@ The cycle is repeated on the 10th place value until the highest place value a va
 Check out an [Example](./05-Sorting-Algos/Intermediate/radixSort.js)
 
 The Big O is approximately `O(nk)` where `n` is the array length and `k` is the average number of digits in all the numbers in the array. Though a different concept relating to how computers store numbers pushes the Big O to around `O(n log n)`, but more about than later :).
+
+## Data Structures
+
+### Linked Lists
+
+Is a data struct with a `head`, `tail` & `length`. It is made up of `nodes` each with a `value` and `pointer` to the next node || `null`. You can't randomly access a node - have to start from the first (or last for `doubly linked lists`) to get to the desired node. This is best for insertions & deletions as no `re-indexing` of nodes is involved as it is in the case of arrays.
+
+#### Singly Linked List
+
+The current node holds a pointer to the next node.
+
+Check out an [Example](./06-Data-Structures/Linked-Lists/singlyLinkedList.js)
+
+ Big O is as: insertion `O(1)`, search `O(n)`, access `O(n)` & removal from `O(1)` in `shifting` to `O(n)` in `popping`.
