@@ -10,7 +10,7 @@
     - [1. Frequency Counter](#1-frequency-counter)
     - [2. Multiple Pointers](#2-multiple-pointers)
     - [3. Sliding Window](#3-sliding-window)
-      - [4. Divide \& Conquer](#4-divide--conquer)
+    - [4. Divide \& Conquer](#4-divide--conquer)
   - [Searching Algorithms](#searching-algorithms)
   - [Sorting Algorithms](#sorting-algorithms)
     - [1. Elementary / Quadratic Sorting Algorithms](#1-elementary--quadratic-sorting-algorithms)
@@ -24,6 +24,7 @@
   - [Data Structures](#data-structures)
     - [Linked Lists](#linked-lists)
       - [Singly Linked List](#singly-linked-list)
+      - [Doubly Linked List](#doubly-linked-list)
 
 ## Big O Notaion
 
@@ -79,7 +80,7 @@ Let the window slide. Instead of redoing similar calculations, find out what is 
 
 [Sliding window example](./02-Solving-Patterns/slidingWindow.js)
 
-#### 4. Divide & Conquer
+### 4. Divide & Conquer
 
 We'll see about this :)
 
@@ -167,6 +168,49 @@ Is a data struct with a `head`, `tail` & `length`. It is made up of `nodes` each
 
 The current node holds a pointer to the next node.
 
+```js
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+class SinglyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+}
+```
+
 Check out an [Example](./06-Data-Structures/Linked-Lists/singlyLinkedList.js)
 
- Big O is as: insertion `O(1)`, search `O(n)`, access `O(n)` & removal from `O(1)` in `shifting` to `O(n)` in `popping`.
+Big O is as: insertion `O(1)`, search `O(n)`, access `O(n)` & removal from `O(1)` when `shifting` to `O(n)` in `popping`.
+
+#### Doubly Linked List
+
+Trades off flexibility for more memory for storing the extra prev pointer. It's just a bit faster in locating nodes compared to single linked ones.
+
+```js
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.prev = null;
+    this.next = null;
+  }
+}
+
+class DoublyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+}
+```
+
+Check out an [Example](./06-Data-Structures/Linked-Lists/doublyLinkedList.js)
+
+Big O is as: insertion `O(1)`, search `O(n)` - but literally `O(n/2)` which is still `n` as n grows, access `O(n)` & removal from `O(1)` when `shifting` to `O(n)` in `popping`.
