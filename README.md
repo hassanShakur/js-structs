@@ -25,6 +25,7 @@
     - [Linked Lists](#linked-lists)
       - [Singly Linked List](#singly-linked-list)
       - [Doubly Linked List](#doubly-linked-list)
+    - [Stack](#stack)
 
 ## Big O Notaion
 
@@ -214,3 +215,25 @@ class DoublyLinkedList {
 Check out an [Example](./06-Data-Structures/Linked-Lists/doublyLinkedList.js)
 
 Big O is as: insertion `O(1)`, search `O(n)` - but literally `O(n/2)` which is still `n` as n grows, access `O(n)` & removal from `O(1)` when `shifting` to `O(n)` in `popping`.
+
+### Stack
+
+Basicly the `LIFO` data structure. Can be seen in managing function invocations in code, browser routing history, the call stack... This is kinda similar to the singly linked list but the adding and removing is done to the beginning of the structure to ensure `constant` pushing and popping. Here's a sample `push()`.
+
+```js
+push(val) {
+    const newNode = new Node(val);
+    if (!this.first) {
+      this.first = newNode;
+      this.last = newNode;
+    } else {
+      const temp = this.first;
+      this.first = newNode;
+      this.first.next = temp;
+    }
+
+    return ++this.size;
+  }
+```
+
+Check out an [Example](./06-Data-Structures/Stacks/stack.js)
