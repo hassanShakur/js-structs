@@ -26,6 +26,7 @@
       - [Singly Linked List](#singly-linked-list)
       - [Doubly Linked List](#doubly-linked-list)
     - [Stack](#stack)
+    - [Queue](#queue)
 
 ## Big O Notaion
 
@@ -218,7 +219,7 @@ Big O is as: insertion `O(1)`, search `O(n)` - but literally `O(n/2)` which is s
 
 ### Stack
 
-Basicly the `LIFO` data structure. Can be seen in managing function invocations in code, browser routing history, the call stack... This is kinda similar to the singly linked list but the adding and removing is done to the beginning of the structure to ensure `constant` pushing and popping. Here's a sample `push()`.
+Basicly the `LIFO` data structure. Can be seen in managing function invocations in code, browser routing history, the call stack... This is kinda similar to the singly linked list but the adding and removing is done to the beginning of the structure to ensure `constant` pushing and popping. A stack using an array can be through `push()` & `pop()`. Here's a sample `push()`.
 
 ```js
 push(val) {
@@ -237,3 +238,9 @@ push(val) {
 ```
 
 Check out an [Example](./06-Data-Structures/Stacks/stack.js)
+
+### Queue
+
+Basicly the `FIFO` data structure. Can be seen in comp background tasks, uploadings, printing items... This is kinda similar to the singly linked list but the adding (enqueue) is done to the tail and removing (dequeue) on the head of the structure to ensure `constant` pushing and popping. A stack using an array can be through `push()` & `shift()`, OR `unshift()` & `pop()`.
+
+Check out an [Example](./06-Data-Structures/Queues/queue.js)
