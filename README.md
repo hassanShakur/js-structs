@@ -27,6 +27,7 @@
       - [Doubly Linked List](#doubly-linked-list)
     - [Stack](#stack)
     - [Queue](#queue)
+    - [Trees 🌳🌲🌴](#trees-)
 
 ## Big O Notaion
 
@@ -244,3 +245,20 @@ Check out an [Example](./06-Data-Structures/Stacks/stack.js)
 Basicly the `FIFO` data structure. Can be seen in comp background tasks, uploadings, printing items... This is kinda similar to the singly linked list but the adding (enqueue) is done to the tail and removing (dequeue) on the head of the structure to ensure `constant` pushing and popping. A stack using an array can be through `push()` & `shift()`, OR `unshift()` & `pop()`.
 
 Check out an [Example](./06-Data-Structures/Queues/queue.js)
+
+### Trees 🌳🌲🌴
+
+Is a `non-linear` data struct with its nodes having a parent-child relationship.
+
+- All arrows (`edges`) must be pointed to children and not siblings, parents or root,
+- Must have 1 root
+
+It is used in network routing, the DOM, JSON, file structure... `Binary trees` have atmost 2 children per node and its subset `Binary search tree` has the following:
+
+- Nodes are sorted
+- At any node, all values less than it are to the left
+- I don't need to say the reverse
+
+Check out an [Example](./06-Data-Structures/Trees/binarySearchTree.js)
+
+BSTs have a Big O of `O(log n)` in both insertion and seaching. In edge cases where one side has too many nodes may raise the complexity to a worse of `O(n)`. For that it's better to restructure the tree based on some mid-value.
