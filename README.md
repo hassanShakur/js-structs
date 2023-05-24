@@ -295,12 +295,16 @@ BSTs have a Big O of `O(log n)` in both insertion and seaching. In edge cases wh
 
    ![](images/binary-search-tree.png)
 
-   - Pre-order traversal - `[40, 30, 25, 35, 50, 45, 60]` - Start with the `node`, then the `left` then `right`.
+   - Pre-order traversal - `[40, 30, 25, 35, 50, 45, 60]` - Start with the `node`, then the `left` then `right`. (Node first).
 
      [Sample code](./07-Tree-Traversal/Depth-First-Search/preOrder.js)
 
-   - Post-order traversal - `[25, 35, 30, 45, 60, 50, 40]` - Start with the `left`, then the `right` then `node`.
+   - Post-order traversal - `[25, 35, 30, 45, 60, 50, 40]` - Start with the `left`, then the `right` then `node`. (Node last).
 
      [Sample code](./07-Tree-Traversal/Depth-First-Search/postOrder.js)
 
-   - In-order traversal
+   - In-order traversal - `[25, 30, 35, 40, 45, 50, 60]` - Start with the `left`, then the `node` then `right`. (Node in between).
+
+     [Sample code](./07-Tree-Traversal/Depth-First-Search/inOrder.js)
+
+BFS and DFS have almost similar time complexity. In terms of space, `BFS` needs more space with `broad` trees and `DFS` uses more space with `deep` trees.
