@@ -266,25 +266,38 @@ BSTs have a Big O of `O(log n)` in both insertion and seaching. In edge cases wh
 
 #### Tree Traversal
 
-1. Breadth First Search
+1. ##### Breadth First Search
+
    The tree is traversed in levels from the root, its children and grand children 😅 and so on. Best way is to use a `queue`. While the queue is not empty, you'll be adding the children of the node and mark their parent as visited after removing it from the queue. This ensures all siblings are following each other in the traversal thus `BFS`.
 
-```js
-const BreadthFirstSearch = (tree) => {
-  const queue = new Queue();
-  const visited = [];
-  let curr = tree.root;
-  queue.enqueue(curr);
+   ```js
+   const BreadthFirstSearch = (tree) => {
+     const queue = new Queue();
+     const visited = [];
+     let curr = tree.root;
+     queue.enqueue(curr);
 
-  while (queue.size) {
-    curr = queue.dequeue();
-    visited.push(curr.value);
-    if (curr.left) queue.enqueue(curr.left);
-    if (curr.right) queue.enqueue(curr.right);
-  }
+     while (queue.size) {
+       curr = queue.dequeue();
+       visited.push(curr.value);
+       if (curr.left) queue.enqueue(curr.left);
+       if (curr.right) queue.enqueue(curr.right);
+     }
+     return visited;
+   };
+   ```
 
-  return visited;
-};
-```
+   Check out an [Example](./07-Tree-Traversal/Breadth-First-Search/bfs.js)
 
-Check out an [Example](./07-Tree-Traversal/Breadth-First-Search/bfs.js)
+2. ##### Depth First Search
+
+   There are different flavours to this. Given a tree:
+
+   ![](images/binary-search-tree.png)
+
+   - Pre-order traversal - `[40, 30, 25, 35, 50, 45, 60]` - Start with the `node`, then the `left` then `right`.
+
+     Check out an [Example](./07-Tree-Traversal/Depth-First-Search/preOrder.js)
+
+   - Post-order traversal - `[25, 35, 30, 45, 60, 50, 40]` - Start with the `left`, then the `right` then `node`.
+   - In-order traversal
