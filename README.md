@@ -297,7 +297,10 @@ BSTs have a Big O of `O(log n)` in both insertion and seaching. In edge cases wh
 
    - Pre-order traversal - `[40, 30, 25, 35, 50, 45, 60]` - Start with the `node`, then the `left` then `right`.
 
-     Check out an [Example](./07-Tree-Traversal/Depth-First-Search/preOrder.js)
+     [Sample code](./07-Tree-Traversal/Depth-First-Search/preOrder.js)
 
    - Post-order traversal - `[25, 35, 30, 45, 60, 50, 40]` - Start with the `left`, then the `right` then `node`.
+
+     [Sample code](./07-Tree-Traversal/Depth-First-Search/postOrder.js)
+
    - In-order traversal
