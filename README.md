@@ -28,6 +28,7 @@
     - [Stack](#stack)
     - [Queue](#queue)
     - [Trees 🌳🌲🌴](#trees-)
+      - [Tree Traversal](#tree-traversal)
 
 ## Big O Notaion
 
@@ -262,3 +263,28 @@ It is used in network routing, the DOM, JSON, file structure... `Binary trees` h
 Check out an [Example](./06-Data-Structures/Trees/binarySearchTree.js)
 
 BSTs have a Big O of `O(log n)` in both insertion and seaching. In edge cases where one side has too many nodes may raise the complexity to a worse of `O(n)`. For that it's better to restructure the tree based on some mid-value.
+
+#### Tree Traversal
+
+1. Breadth First Search
+   The tree is traversed in levels from the root, its children and grand children 😅 and so on. Best way is to use a `queue`. While the queue is not empty, you'll be adding the children of the node and mark their parent as visited after removing it from the queue. This ensures all siblings are following each other in the traversal thus `BFS`.
+
+```js
+const BreadthFirstSearch = (tree) => {
+  const queue = new Queue();
+  const visited = [];
+  let curr = tree.root;
+  queue.enqueue(curr);
+
+  while (queue.size) {
+    curr = queue.dequeue();
+    visited.push(curr.value);
+    if (curr.left) queue.enqueue(curr.left);
+    if (curr.right) queue.enqueue(curr.right);
+  }
+
+  return visited;
+};
+```
+
+Check out an [Example](./07-Tree-Traversal/Breadth-First-Search/bfs.js)
