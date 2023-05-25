@@ -29,6 +29,7 @@
     - [Queue](#queue)
     - [Trees 🌳🌲🌴](#trees-)
       - [Tree Traversal](#tree-traversal)
+      - [Binary Heaps](#binary-heaps)
 
 ## Big O Notaion
 
@@ -291,6 +292,23 @@ BSTs have a Big O of `O(log n)` in both insertion and seaching. In edge cases wh
 
 2. ##### Depth First Search
 
+   ```js
+   const preOrderDFS = (tree) => {
+     const visited = [];
+     const start = tree.root;
+
+     //   Recursive func
+     const traverse = (node) => {
+       visited.push(node.value); // Flavour difference
+       if (node.left) traverse(node.left);
+       if (node.right) traverse(node.right);
+     };
+
+     traverse(start);
+     return visited;
+   };
+   ```
+
    There are different flavours to this. Given a tree:
 
    ![](images/binary-search-tree.png)
@@ -308,3 +326,13 @@ BSTs have a Big O of `O(log n)` in both insertion and seaching. In edge cases wh
      [Sample code](./07-Tree-Traversal/Depth-First-Search/inOrder.js)
 
 BFS and DFS have almost similar time complexity. In terms of space, `BFS` needs more space with `broad` trees and `DFS` uses more space with `deep` trees.
+
+#### Binary Heaps
+
+Heaps are a special type of trees such that a parent must be greater than the children for `max heaps` and the reverse where the parent must be smaller than the child in `min heaps`. A heap is generated in a compact form that it is filled from left to right regardless ensuring the left parents are at their max number of children.
+`Binary heaps` are a special type of heaps that, well, are binary. Each parent has atmost 2 kids. Heaps are generally used in implementation of `priority queues` and in some `graph traversal algorithms`.
+Arranging the element in a heap inside an array, given an element is at index `n` in the array:
+
+- Left child position is at `2n + 1`.
+- Right child is at `left + 1`.
+- Given child is at index `n`, parent is at `Math.floor((n-1) / 2)` which is just the reverse of finding children.
