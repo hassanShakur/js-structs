@@ -31,6 +31,8 @@
       - [Tree Traversal](#tree-traversal)
       - [Binary Heaps](#binary-heaps)
       - [Priority Queue](#priority-queue)
+    - [Hash Tables #️⃣📑](#hash-tables-️⃣)
+      - [Handling Collissions](#handling-collissions)
 
 ## Big O Notaion
 
@@ -376,3 +378,16 @@ Now talking about the Big O of binary heaps, `insertion` & `removal` stand at `O
 Mostly implemented using binary heaps. This ensures the item with highest priority is the `root` of the heap and when the `extractRoot()` is called, this high priority element is returned and the heap re-structured to get the next high priority item at the top.
 
 Check out an [Example](./06-Data-Structures/Priority-Queue/priorityQueue.js) of its implementation using a `min binary heap`.
+
+### Hash Tables #️⃣📑
+
+Used to store `key-value` pairs like `objects` in `JavaScript`, `dictionaries` in `python` and `maps` in `go`, `java`... They are quite fast in terms of `searching`, `addition` & `removal` of values. The way they work is by converting the `keys` into valid array indices by use of a `hash function`. This function has to return the same index every time the same key is passed to it. After the convertion the value relateed to the key can now be accessed using this index.
+
+#### Handling Collissions
+
+The hash funcs depending on certain conditions can generate the same index for 2 or more different inputs causing collissions. There are several ways to handle this including:
+
+1. Separate Chaining
+   The inputs are stored in the same index location but in a sort of nested structure, like a nested array at that index.
+2. Linear Probing
+   The func looks ahead for the most immediate empty index and stores this new input at that position.
