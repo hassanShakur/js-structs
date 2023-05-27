@@ -336,3 +336,32 @@ Arranging the element in a heap inside an array, given an element is at index `n
 - Left child position is at `2n + 1`.
 - Right child is at `left + 1`.
 - Given child is at index `n`, parent is at `Math.floor((n-1) / 2)` which is just the reverse of finding children.
+
+The way `insertion` works is by inserting the new node as a leaf at the end of the array, then `bubble up` depending on the heap type after comparison to the parent.
+
+Here's the general syntax:
+
+```js
+insert(element) {
+  this.values.push(element);
+  this.bubbleUp();
+  return this.values;
+}
+```
+
+In `removal`, the root is normally the one extracted. This is done by swapping it with the last value in the heap. With this last value as the new root, it is `trickled down` to a fit position i.e, we keep comparing it with its left and right children & swap it with the `largest` of the 2 - in `max heaps` or `smallest` in `min heaps` - until there are no children or both children are smaller or larger in `max heaps` & `min heaps` respectively.
+
+Here's the general syntax:
+
+```js
+extractMax() {
+  const max = this.values[0];
+  const end = this.values.pop();
+
+  if (this.values.length > 0) {
+    this.values[0] = end;
+    this.trickleDown();
+  }
+  return max;
+}
+```
