@@ -30,6 +30,7 @@
     - [Trees 🌳🌲🌴](#trees-)
       - [Tree Traversal](#tree-traversal)
       - [Binary Heaps](#binary-heaps)
+      - [Priority Queue](#priority-queue)
 
 ## Big O Notaion
 
@@ -329,7 +330,7 @@ BFS and DFS have almost similar time complexity. In terms of space, `BFS` needs 
 
 #### Binary Heaps
 
-Heaps are a special type of trees such that a parent must be greater than the children for `max heaps` and the reverse where the parent must be smaller than the child in `min heaps`. A heap is generated in a compact form that it is filled from left to right regardless ensuring the left parents are at their max number of children.
+Heaps are a special type of trees such that a parent must be greater than the children for `max heaps` and the reverse where the parent must be smaller than the child in `min heaps`. A heap is generated in a compact form that it is filled from left to right regardless ensuring the left parents are at their max number of children. This keeps the tree always balanced.
 `Binary heaps` are a special type of heaps that, well, are binary. Each parent has atmost 2 kids. Heaps are generally used in implementation of `priority queues` and in some `graph traversal algorithms`.
 Arranging the element in a heap inside an array, given an element is at index `n` in the array:
 
@@ -365,3 +366,13 @@ extractMax() {
   return max;
 }
 ```
+
+Check out an [Example](./06-Data-Structures/Heaps/maxBinaryHeap.js) of a `max binary heap`.
+
+Now talking about the Big O of binary heaps, `insertion` & `removal` stand at `O(log n)` in a worst case. This is so since in a worst case of say inserting an element that is the largest, it will only be compared by 1 element per level with regards to the tree. If we're inserting the `16th` element, it will only be compared by at most `4` nodes.
+
+#### Priority Queue
+
+Mostly implemented using binary heaps. This ensures the item with highest priority is the `root` of the heap and when the `extractRoot()` is called, this high priority element is returned and the heap re-structured to get the next high priority item at the top.
+
+Check out an [Example](./06-Data-Structures/Priority-Queue/priorityQueue.js) of its implementation using a `min binary heap`.
