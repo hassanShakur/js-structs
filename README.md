@@ -391,3 +391,5 @@ The hash funcs depending on certain conditions can generate the same index for 2
    The inputs are stored in the same index location but in a sort of nested structure, like a nested array at that index.
 2. Linear Probing
    The func looks ahead for the most immediate empty index and stores this new input at that position.
+
+A nice hash should be fast in terms of insertion, deletion and access, should distribute the keys uniformly and be deterministic in terms of index production.

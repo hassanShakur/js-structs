@@ -33,6 +33,37 @@ class HashTable {
         return this.keyMap[index][i][1];
     }
   }
+
+  keys() {
+    let keysArr = [];
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (!this.keyMap[i]) continue;
+
+      // Loop over sub array
+      for (let j = 0; j < this.keyMap[i].length; j++) {
+        if (keysArr.includes(this.keyMap[i][j][0])) continue;
+        keysArr.push(this.keyMap[i][j][0]);
+      }
+    }
+
+    return keysArr;
+  }
+
+  values() {
+    let valsArr = [];
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (!this.keyMap[i]) continue;
+
+      // Loop over sub array
+      for (let j = 0; j < this.keyMap[i].length; j++) {
+        if (valsArr.includes(this.keyMap[i][j][1])) continue;
+        valsArr.push(this.keyMap[i][j][1]);
+      }
+    }
+
+    console.log(valsArr);
+    return valsArr;
+  }
 }
 
 const hashMap = new HashTable();
@@ -41,6 +72,8 @@ hashMap.set('apple', '🍏');
 hashMap.set('mango', '🥭');
 hashMap.set('banana', '🍌');
 hashMap.set('orange', '🍊');
+hashMap.set('melon', '🍉');
 
-console.log(hashMap.get('apple'));
+hashMap.keys();
+// console.log(hashMap.get('apple'));
 // console.log(hashMap.keyMap);
