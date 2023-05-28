@@ -33,6 +33,7 @@
       - [Priority Queue](#priority-queue)
     - [Hash Tables #️⃣📑](#hash-tables-️⃣)
       - [Handling Collissions](#handling-collissions)
+    - [Graphs](#graphs)
 
 ## Big O Notaion
 
@@ -381,7 +382,9 @@ Check out an [Example](./06-Data-Structures/Priority-Queue/priorityQueue.js) of 
 
 ### Hash Tables #️⃣📑
 
-Used to store `key-value` pairs like `objects` in `JavaScript`, `dictionaries` in `python` and `maps` in `go`, `java`... They are quite fast in terms of `searching`, `addition` & `removal` of values. The way they work is by converting the `keys` into valid array indices by use of a `hash function`. This function has to return the same index every time the same key is passed to it. After the convertion the value relateed to the key can now be accessed using this index.
+Used to store `key-value` pairs like `objects` in `JavaScript`, `dictionaries` in `python` and `maps` in `go`, `java`... They are quite fast in terms of `searching`, `addition` & `removal` of values. The way they work is by converting the `keys` into valid array indices by use of a `hash function`. This function has to return the same index every time the same key is passed to it. After the convertion the value related to the key can now be accessed using this index.
+
+Check out an [Example](./06-Data-Structures/Hash-Table/hashMap.js).
 
 #### Handling Collissions
 
@@ -393,3 +396,17 @@ The hash funcs depending on certain conditions can generate the same index for 2
    The func looks ahead for the most immediate empty index and stores this new input at that position.
 
 A nice hash should be fast in terms of insertion, deletion and access, should distribute the keys uniformly and be deterministic in terms of index production.
+
+### Graphs
+
+Just terminals / nodes / vertices and the vertices that connect them. They are applied in social networking, routing, location and mapping, recommendation algorithms... They can be modelled using `adjacency matrices` which is a matrix (table-like) keeping track of which node is next to which, or and `adjacency list` where each vertex has a list of its adjacent vertices. You can also use a hash map with the vertex in question as the key and the adjacent vetices as the values.
+
+Example of an adjacency matrix. Source [cs.mtsu.edu](https://www.cs.mtsu.edu/~xyang/3080/adjacencyMatrix.html)
+![](images/adjDirectedGraph.png)
+
+Example of an adjacency list. Source [oreilly.com](https://www.oreilly.com/library/view/learning-javascript-data/9781788623872/ef9a9b77-a6d4-480b-a4f4-77336f587b36.xhtml)
+![](images/ajdList.png)
+
+In tems of speed, an adjacency matrix takes up more space, slower to iterate over all edges & is faster to check for a specific edge in comparison to adjacency lists.
+
+Check out an [Example](./06-Data-Structures/Graphs/graph.js) of one implemented using an adjacency list.
