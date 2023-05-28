@@ -35,8 +35,18 @@ const g = new Graph();
 g.addVertex('A');
 g.addVertex('B');
 g.addVertex('C');
+g.addVertex('D');
 g.addEdge('A', 'B');
+g.addEdge('B', 'D');
+g.addEdge('B', 'C');
 g.addEdge('A', 'C');
-// g.removeEdge('A', 'B');
-g.removeVertex('A');
-console.log(g);
+g.addEdge('C', 'D');
+
+module.exports = g;
+// console.log(g);
+
+//       A
+//     /    \
+//    B ---- C
+//     \    /
+//        D
