@@ -415,4 +415,11 @@ Check out an [Example](./06-Data-Structures/Graphs/graph.js) of one implemented 
 #### Graph Traversal
 
 1. Depth First Search
+   
+   Use a stack to keep track of nodes to be visited. The priority is to visit the current vertex's adjacent node, then those adjacent to it and so on, over finising all adjacent vertices of current node then visiting their adjacents.
    Check out a [Recursive](./06-Data-Structures/Graphs/Traversals/dfsRecursive.js) & [Iterative](./06-Data-Structures/Graphs/Traversals/dfsItertive.js) graph traversal mechanisms.
+
+2. Breadth First Search
+   
+   Use a queue to keep track of nodes to be visited. The priority on finishing all adjacent vertices of current node then visiting their adjacents.
+   Check out a [Recursive](./06-Data-Structures/Graphs/Traversals/dfsRecursive.js)
