@@ -34,6 +34,7 @@
     - [Hash Tables #️⃣📑](#hash-tables-️⃣)
       - [Handling Collissions](#handling-collissions)
     - [Graphs](#graphs)
+      - [Graph Traversal](#graph-traversal)
 
 ## Big O Notaion
 
@@ -410,3 +411,8 @@ Example of an adjacency list. Source [oreilly.com](https://www.oreilly.com/libra
 In tems of speed, an adjacency matrix takes up more space, slower to iterate over all edges & is faster to check for a specific edge in comparison to adjacency lists.
 
 Check out an [Example](./06-Data-Structures/Graphs/graph.js) of one implemented using an adjacency list.
+
+#### Graph Traversal
+
+1. Depth First Search
+   Check out a [Recursive](./06-Data-Structures/Graphs/Traversals/dfsRecursive.js) & [Iterative](./06-Data-Structures/Graphs/Traversals/dfsItertive.js) graph traversal mechanisms.
