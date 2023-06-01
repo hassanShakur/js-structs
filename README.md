@@ -36,6 +36,7 @@
     - [Graphs](#graphs)
       - [Graph Traversal](#graph-traversal)
   - [Dijkstra's Algorithm](#dijkstras-algorithm)
+  - [Dynamic Programming](#dynamic-programming)
 
 ## Big O Notaion
 
@@ -438,3 +439,45 @@ I won't rewrite wikipedia but this attempts to fing the shortest path between an
 - Do exactly everything that was done to the start node updating the necessary. Stop when all vertices are visited.
 
 Check out an [Example](./08-Dijkstras-Algorithm/algo.js) of finding shortest path using this algorithm. Ii uses a [Priority queue](./06-Data-Structures/Priority-Queue/priorityQueue.js) & a [simple weighted graph](./06-Data-Structures/Graphs/weightedGraph.js).
+
+## Dynamic Programming
+
+It is a concept that can be used to solve some complex problems. It breaks down the problem into simpler parts in a `recursive` manner, solves them once, and stores their solution to prevent their duplication. It can be used when the problem has:
+
+1. An Optimal Substructure
+
+   This is when the solutions obtained from the sub-problems can be used to create the optimal solution for the bigger problem.
+
+2. Overlapping Subproblems
+
+   Happens when after a problem breakdown, a similar sub-problem is computed more than once e.g. in the Fibonacci series.
+
+One of the methods involved is `memoization` where results of expensive function calls are stored and this value is returned whenever the same function is called with the same arguments in the future. Check out an example in solving the `fib series`:
+
+Naive version:
+
+```js
+// ! Please don't run this with huge numbers
+// ? Please bro :)
+
+const fib = (num) => {
+  if (num < 3) return 1;
+  return fib(num - 1) + fib(num - 2);
+};
+```
+
+Big O is around `O(2^n)` which is like veeeery bad 🙂.
+
+Memoized version:
+
+```js
+const fib = (num, memo = {}) => {
+  if (memo[num]) return memo[num];
+  if (num < 3) return 1;
+  const result = fib(num - 1, memo) + fib(num - 2, memo);
+  memo[num] = result;
+  return result;
+};
+```
+
+Big O is around `O(n)` which is quite and very good ✅. Of course there is the tradeoff of time for space complexity and all but still.
