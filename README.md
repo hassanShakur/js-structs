@@ -35,6 +35,7 @@
       - [Handling Collissions](#handling-collissions)
     - [Graphs](#graphs)
       - [Graph Traversal](#graph-traversal)
+  - [Dijkstra's Algorithm](#dijkstras-algorithm)
 
 ## Big O Notaion
 
@@ -415,11 +416,25 @@ Check out an [Example](./06-Data-Structures/Graphs/graph.js) of one implemented 
 #### Graph Traversal
 
 1. Depth First Search
-   
+
    Use a stack to keep track of nodes to be visited. The priority is to visit the current vertex's adjacent node, then those adjacent to it and so on, over finising all adjacent vertices of current node then visiting their adjacents.
    Check out a [Recursive](./06-Data-Structures/Graphs/Traversals/dfsRecursive.js) & [Iterative](./06-Data-Structures/Graphs/Traversals/dfsItertive.js) graph traversal mechanisms.
 
 2. Breadth First Search
-   
+
    Use a queue to keep track of nodes to be visited. The priority on finishing all adjacent vertices of current node then visiting their adjacents.
-   Check out a [Recursive](./06-Data-Structures/Graphs/Traversals/dfsRecursive.js)
+   Check out an [Example](./06-Data-Structures/Graphs/Traversals/bfs.js)
+
+## Dijkstra's Algorithm
+
+I won't rewrite wikipedia but this attempts to fing the shortest path between any 2 vertices in a graph. It keeps track of `visited` - (`[]`) nodes, `current path length` to a specific node - (`{node: pathLenght}`) and `through which node` was this current path - (`{thisNode: fromNode}`). Whenever a shorter path is found, this value is updated. Lets pseudocode this:
+
+- Decide on the initial vertex - `start`.
+- Initialize the shortest path from `start` to all other vertices to be `Infinity` and for each of them, the `fromNode` value to `null`.
+- Visit all `start` node's neighbours and if the new path is shorter than the current shortest path, update the shortest path for that neighbour to this value. Else, leave it untouched.
+- Same way, update the `fromNode` structure for each of the neighbours to be the node you visited it from - in this case `start`. This node will also be changing as the shortest path to this node also changes i.e if a shorter path is found.
+- Mark the `start` node as `visited`.
+- Among all the vertices that haven't been visited, select the one whose path is currently the `shortest` - Quick tip, use `priority queue`.
+- Do exactly everything that was done to the start node updating the necessary. Stop when all vertices are visited.
+
+Check out an [Example](./08-Dijkstras-Algorithm/algo.js) of finding shortest path using this algorithm. Ii uses a [Priority queue](./06-Data-Structures/Priority-Queue/priorityQueue.js) & a [simple weighted graph](./06-Data-Structures/Graphs/weightedGraph.js).
