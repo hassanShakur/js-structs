@@ -37,6 +37,8 @@
       - [Graph Traversal](#graph-traversal)
   - [Dijkstra's Algorithm](#dijkstras-algorithm)
   - [Dynamic Programming](#dynamic-programming)
+    - [Memoization](#memoization)
+    - [Tabulation](#tabulation)
 
 ## Big O Notaion
 
@@ -452,7 +454,11 @@ It is a concept that can be used to solve some complex problems. It breaks down 
 
    Happens when after a problem breakdown, a similar sub-problem is computed more than once e.g. in the Fibonacci series.
 
-One of the methods involved is `memoization` where results of expensive function calls are stored and this value is returned whenever the same function is called with the same arguments in the future. Check out an example in solving the `fib series`:
+The methods involved includes `memoization` & `tabulation`.
+
+### Memoization
+
+This is where results of expensive function calls are stored and this value is returned whenever the same function is called with the same arguments in the future. Check out an example in solving the `fib series`:
 
 Naive version:
 
@@ -480,4 +486,24 @@ const fib = (num, memo = {}) => {
 };
 ```
 
-Big O is around `O(n)` which is quite and very good ✅. Of course there is the tradeoff of time for space complexity and all but still.
+Big O is around `O(n)` which is quite and very good ✅. Of course there is the tradeoff of time for space complexity and all but still. The downside might be that it may exceed the max call stack size for the browser which is not good :|. `Tabulation` to the rescue...
+
+### Tabulation
+
+The result of the prev result is stored in a table-like structure. It uses the bottom-up approach and iteration. This improves on the space complexity issue in `memoization` and also its call stack exceeding issue as tabulation does not use recursion. In the fib problem, we can create an array holding the result of base cases thenstarting from the bottom like 2 or 3, the result is pushed to the array and 2 prev results are used to produce the third which simplifies it all to just additional problem.
+
+```js
+const fib = (num) => {
+  if (num < 3) return 1;
+  const table = [0, 1, 1];
+
+  for (let i = 3; i <= num; i++) {
+    table[i] = table[i - 1] + table[i - 2];
+  }
+
+  return table[num];
+};
+```
+
+The Big O is still `O(n)` clearly.
+I guess that summarizes our `Data Structures` for now 🙂✅. It has been awesome...
