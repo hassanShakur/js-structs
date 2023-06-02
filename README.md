@@ -320,7 +320,7 @@ BSTs have a Big O of `O(log n)` in both insertion and seaching. In edge cases wh
 
    There are different flavours to this. Given a tree:
 
-   ![](images/binary-search-tree.png)
+   ![Binary search tree](images/binary-search-tree.png)
 
    - Pre-order traversal - `[40, 30, 25, 35, 50, 45, 60]` - Start with the `node`, then the `left` then `right`. (Node first).
 
@@ -407,10 +407,10 @@ A nice hash should be fast in terms of insertion, deletion and access, should di
 Just terminals / nodes / vertices and the vertices that connect them. They are applied in social networking, routing, location and mapping, recommendation algorithms... They can be modelled using `adjacency matrices` which is a matrix (table-like) keeping track of which node is next to which, or and `adjacency list` where each vertex has a list of its adjacent vertices. You can also use a hash map with the vertex in question as the key and the adjacent vetices as the values.
 
 Example of an adjacency matrix. Source [cs.mtsu.edu](https://www.cs.mtsu.edu/~xyang/3080/adjacencyMatrix.html)
-![](images/adjDirectedGraph.png)
+![Adjacency matrix directed graph](images/adjDirectedGraph.png)
 
 Example of an adjacency list. Source [oreilly.com](https://www.oreilly.com/library/view/learning-javascript-data/9781788623872/ef9a9b77-a6d4-480b-a4f4-77336f587b36.xhtml)
-![](images/ajdList.png)
+![Adjacency list graph](images/ajdList.png)
 
 In tems of speed, an adjacency matrix takes up more space, slower to iterate over all edges & is faster to check for a specific edge in comparison to adjacency lists.
 
@@ -506,4 +506,5 @@ const fib = (num) => {
 ```
 
 The Big O is still `O(n)` clearly.
+
 I guess that summarizes our `Data Structures` for now 🙂✅. It has been awesome...
